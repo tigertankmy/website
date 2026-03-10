@@ -18,6 +18,10 @@ footer {
 	font-family: Montserrat;
 	font-weight: 500;
 }
+.organisation-logo {
+	display: flex;
+	align-items: center;
+}
 .organisation-logo > .text-logo-first-letter {
 	font-family: Gelasio;
 	font-size: 1.4rem;
@@ -25,11 +29,12 @@ footer {
 .organisation-logo > .text-logo-after-first-letter {
 	font-weight: 900;
 }
-.organisation-logo > .text-logo-malaysia {
+.organisation-logo > .text-logo-after-first-letter > .text-logo-malaysia {
 	font-weight: 500;
 }
-.organisation-logo::after {
-	/* add logo here */
+.organisation-logo > .image-logo {
+	width: 4rem;
+	margin-left: 0.5rem;
 }
 
 address {
@@ -50,14 +55,14 @@ address dd ul {
 	justify-content: space-between;
 }
 [data-icon="instagram"] {
-	content: url("./assets/icons/brands/Instagram_Glyph_Black.svg");
+	content: url("../assets/icons/brands/Instagram_Glyph_Black.svg");
 	width: 2rem;
 }
 [data-icon="tiktok"] {
-	content: url("./assets/icons/brands/Tiktok_icon.svg");
+	content: url("../assets/icons/brands/Tiktok_icon.svg");
 	width: 2rem;
 }
 [data-icon="linkedin"] {
-	content: url("./assets/icons/brands/InBug-Black.png");
+	content: url("../assets/icons/brands/InBug-Black.png");
 	width: 2rem;
 }

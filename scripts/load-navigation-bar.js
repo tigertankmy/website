@@ -1,23 +1,18 @@
 const NAVIGATION_LINKS = {
 	"/": [
 		"Home",
-		"/assets/icons/home_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg",
 	],
 	"/register": [
 		"Register",
-		"/assets/icons/checkbook_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg",
 	],
 	"/resources": [
 		"Resources",
-		"/assets/icons/books_movies_and_music_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg",
 	],
 	"/faq": [
 		"FAQ",
-		"/assets/icons/contact_support_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg",
 	],
 	"/sponsors-and-partners": [
 		"Sponsors & partners",
-		"/assets/icons/handshake_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg",
 	],
 };
 
@@ -28,8 +23,14 @@ buttonDropdownNavbarToggle.id = "button-dropdown-navbar-toggle";
 const buttonText = document.createElement("span");
 // destructure first element of array
 [buttonText.textContent] = NAVIGATION_LINKS[window.location.pathname];
+const currentPageIcon = document.createElement("span");
+currentPageIcon.classList.add(`${window.location.pathname.slice(1) || "home"}-icon`);
+const container = document.createElement("div");
 
-buttonDropdownNavbarToggle.appendChild(buttonText);
+container.appendChild(currentPageIcon);
+container.appendChild(buttonText);
+
+buttonDropdownNavbarToggle.appendChild(container);
 
 // this <ul> contains all the navigation links
 const ul = document.createElement("ul");
@@ -38,14 +39,19 @@ for (const [path, [name]] of Object.entries(NAVIGATION_LINKS)) {
 	const li = document.createElement("li");
 	if (window.location.pathname === path) li.classList.add("current-page");
 
+	const img = document.createElement("span");
+	img.classList.add(`${path.slice(1) || "home"}-icon`);
+	img.classList.add("nav-link-icon");
+
 	const a = document.createElement("a");
 	a.href = path;
 
-	const span = document.createElement("span");
-	span.classList.add("nav-link-anchor-text");
-	span.textContent = name;
+	const navLinkText = document.createElement("span");
+	navLinkText.classList.add("nav-link-anchor-text");
+	navLinkText.textContent = name;
 
-	a.appendChild(span);
+	a.appendChild(img);
+	a.appendChild(navLinkText);
 	li.appendChild(a);
 	ul.appendChild(li);
 }

@@ -2,8 +2,8 @@ const footer = document.querySelector("footer");
 footer.innerHTML = `
 <div id="footer-intro-container">
 	<span class="organisation-logo footer-heading">
-		<span class="text-logo-first-letter">T</span><span class="text-logo-after-first-letter">iger Tank</span>
-		<span class="text-logo-malaysia">Malaysia</span>
+		<span class="text-logo-first-letter">T</span><span class="text-logo-after-first-letter">iger Tank<span class="text-logo-malaysia"> Malaysia</span></span>
+		<img src="../assets/image-logo.svg" class="image-logo">
 	</span>
 	<span class="footer-motto">Introducing entrepreneurship to Malaysian students.</span>
 </div>
@@ -14,7 +14,7 @@ footer.innerHTML = `
 			<dd>
 				<ul>
 					<li><a href="mailto:tigertankmalaysia@gmail.com">tigertankmalaysia@gmail.com</a></li>
-					<li><a href="tel:+60166658769">+60 16-665 8769</a> (Marcus Ong, director)</li>
+					<li><a href="tel:+60166658769">+60 16-665 8769</a> (Marcus Ong, founder & managing director)</li>
 				</ul>
 			</dd>
 		</dl>
