@@ -67,7 +67,7 @@ nav, nav * {
 	}
 }
 @media (width <= 750px) {
-	#button-dropdown-navbar {
+	#button-dropdown-navbar-toggle {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -80,8 +80,24 @@ nav, nav * {
 
 		background-color: var(--white);
 	}
-	nav ul {
+	#button-dropdown-navbar-toggle[data-dropdown-visible="false"]::after {
+		content: url("./assets/icons/keyboard_arrow_down_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg");
+		/* set the size to the size of the icon (24px by 24px) because by default the height of this ::after element is more than 24px for some reason */
+		width: 24px;
+		height: 24px;
+	}
+	#button-dropdown-navbar-toggle[data-dropdown-visible="true"]::after {
+		content: url("./assets/icons/keyboard_arrow_up_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg");
+		width: 24px;
+		height: 24px;
+	}
+	nav ul[data-dropdown-visible="false"] {
 		display: none;
+	}
+	nav ul[data-dropdown-visible="true"] {
+		display: block;
+	}
+	nav ul {
 		margin: 0;
 		padding: 0;
 		background-color: var(--yellow);
