@@ -2,9 +2,12 @@ footer {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	padding: var(--base-vertical-padding) var(--base-horizontal-padding);
+	padding: calc(var(--base-horizontal-padding) / 2) var(--base-horizontal-padding);
 	background-color: var(--grey);
 	color: var(--black);
+
+	/* 1rem, since --base-font-size is 1.2rem */
+	font-size: calc(var(--base-font-size) * 0.83);
 	
 	@media (width < 1110px) {
 		display: block;

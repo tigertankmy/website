@@ -2,8 +2,8 @@ const NAVIGATION_LINKS = {
 	"/": [
 		"Home",
 	],
-	"/register": [
-		"Register",
+	"/registration": [
+		"Registration",
 	],
 	"/resources": [
 		"Resources",
@@ -25,6 +25,7 @@ const buttonText = document.createElement("span");
 [buttonText.textContent] = NAVIGATION_LINKS[window.location.pathname];
 const currentPageIcon = document.createElement("span");
 currentPageIcon.classList.add(`${window.location.pathname.slice(1) || "home"}-icon`);
+currentPageIcon.classList.add("nav-link-icon");
 const container = document.createElement("div");
 
 container.appendChild(currentPageIcon);

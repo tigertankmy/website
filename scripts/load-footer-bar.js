@@ -6,6 +6,7 @@ footer.innerHTML = `
 		<img src="../assets/image-logo.svg" class="image-logo">
 	</span>
 	<span class="footer-motto">Introducing entrepreneurship to Malaysian students.</span>
+	<p><a href="/privacy-policy">Privacy policy</a></p>
 </div>
 <div>
 	<address>
@@ -33,8 +34,5 @@ footer.innerHTML = `
 			</dd>
 		</dl>
 	</address>
-</div>
-<div>
-	<a href="" class="footer-heading">Privacy policy</a>
 </div>
 `;

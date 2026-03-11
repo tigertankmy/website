@@ -3,21 +3,24 @@ html {
 	--white: #FFFBFF;
 	--yellow: #FFBE02;
 	--green: #27A662;
-	--grey: #F5F5F5;
+	--grey: #F2F2F2;
 	
 	--box-background-colour: #FFFBFFCC;
 	--box-shadow-colour: #22222212;
 
-	--base-width: 8rem;
+	/* font size of the first, big, serif "T" in the text logo, to be used when the width of the screen matters */
+	--base-width: 12rem;
+	/* font size of normal text */
 	--base-font-size: 1.2rem;
-	--border-thickness: 0.1rem;
+	/* thickness of the border between page sections */
+	--border-thickness: 0.15rem;
 
-	--base-horizontal-padding: calc(var(--base-width) * 0.3);
-	--base-vertical-padding: calc(var(--base-font-size) * 2.4);
+	/* minimum distance between the left edge of the screen to text */
+	--base-horizontal-padding: calc(var(--base-width) * 0.5);
 }
-@media (width <= 750px) {
+@media (width <= 825px) {
 	html {
-		--base-width: 18vw;
+		--base-width: 16vw;
 	}
 }
 
@@ -26,15 +29,19 @@ body {
 	margin: 0;
 	color: var(--black);
 
-	font-family: Gelasio;
-}
-main {
 	font-size: var(--base-font-size);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+a {
+	color: var(--green);
+}
+p {
+	line-height: 1.4;
 }
 
 section {
-	padding: var(--base-horizontal-padding);
-	border-bottom: calc(var(--border-thickness) * 1.5) solid var(--yellow);
+	padding: calc(var(--base-font-size) * 2.5) var(--base-horizontal-padding);
+	border-bottom: var(--border-thickness) solid var(--yellow);
 }
 section.background-gradient {
 	background: linear-gradient(135deg,rgba(255, 190, 2, 0.35) 0%, rgba(255, 251, 255, 1) 40%, rgba(255, 251, 255, 1) 60%, rgba(39, 166, 98, 0.35) 100%);
@@ -43,13 +50,13 @@ section.background-gradient {
 #h1-section {
 	padding-top: 0;
 
-	text-align: center;
+	/* text-align: center; */
 }
 h1 {
 	display: inline-block;
 	margin: 0;
 
-	text-align: left;
+	/* text-align: left; */
 	text-wrap: nowrap;
 
 	font-weight: 900;
@@ -66,6 +73,7 @@ h1 {
 	font-family: Montserrat;
 	font-size: calc(var(--base-width) * 0.5);
 }
+/* so that "Student Entrepreneur Competition" is on a new line */
 #h1-title-after-first-letter::after{
 	content: "";
 	display: block;
@@ -75,12 +83,13 @@ h1 {
 	left: calc(var(--base-width) * 0.7);
 	bottom: calc(var(--base-width) * 0.5);
 
-	border-top: var(--border-thickness) solid black;
+	border-top: calc(var(--border-thickness) * 0.67) solid black;
 	padding-top: calc(var(--base-width) * 0.05);
 
+	text-transform: capitalize;
 	font-weight: 400;
-	font-family: Gelasio;
-	font-size: calc(var(--base-width) * 0.188);
+	font-family: Montserrat;
+	font-size: calc(var(--base-width) * 0.165);
 }
 #h1-image-logo {
 	display: inline-block;
@@ -89,10 +98,18 @@ h1 {
 	position: relative;
 	bottom: calc(var(--base-width) * 0.48);
 }
+@media (width < 825px) {
+	#h1-subtitle {
+		bottom: calc(var(--base-width) * 0.7);
+	}
+	#h1-image-logo {
+		bottom: calc(var(--base-width) * 0.65);
+	}
+}
 
 #motto, #summary {
 	display: block;
-	margin-bottom: calc(var(--base-width) * 0.3)
+	margin-bottom: calc(var(--base-font-size) * 2)
 }
 #motto {
 	font-weight: 500;
@@ -104,12 +121,12 @@ h1 {
 
 .button-link {
 	display: inline-block;
-	padding: 0.8rem 1.6rem;
+	padding: calc(var(--base-font-size) * 0.67) calc(var(--base-font-size) * 1.33);
 	background-color: var(--yellow);
 	color: var(--black);
 
 	text-decoration: none;
-	font-size: 1.25rem;
+	font-size: var(--base-font-size);
 	transition-duration: 400ms;
 }
 .button-link:hover {
@@ -122,39 +139,38 @@ ul.box-list {
 	list-style-type: none;
 	padding-left: 0;
 }
-@media (width > 750px) {
-	ul.box-list {
+@media (width > 825px) {
+	ul.box-list#core-philosophy-list {
 		display: flex;
 		justify-content: space-between;
 	}
-	ul.box-list li {
+	ul.box-list#core-philosophy-list li {
 		max-width: calc(100% / 4);
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 }
 ul.box-list li {
 	display: block;
-	padding: var(--base-vertical-padding) var(--base-horizontal-padding);
-	margin: 1rem 0;
+	padding: calc(var(--base-font-size) * 2);
+	margin: calc(var(--base-font-size) * 1.5) 0;
 	background-color: var(--box-background-colour);
-	box-shadow: var(--box-shadow-colour) 0 calc(var(--base-width) * 0.125) calc(var(--base-width) * 0.5) 0;
+	box-shadow: var(--box-shadow-colour) 0 1rem 4rem 0;
 }
 ul.box-list h3 {
 	margin-top: 0;
 }
-#vision-mission-list {
-	display: flex;
-	justify-content: space-between;
+ul.box-list p {
+	margin: 0;
 }
-#vision-mission-list li {
-	width: 100%;
-}
-
 ul#core-philosophy-list > li > h3 {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 }
 ul#core-philosophy-list > li> h3::before {
-	margin-right: 0.2rem;
+	margin-right: calc(var(--base-font-size) * 0.5);
+	position: relative;
+	top: calc(var(--base-font-size) * 0.15);
 }
 ul#core-philosophy-list > li#accessibility > h3::before {
 	content: url("../assets/icons/accessibility_new_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg")
