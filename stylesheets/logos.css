@@ -1,0 +1,54 @@
+/* to add a Tiger Tank Student Entrepreneur Competition logo, add an element with the .competition-logo-container class with children as the <h1> element in index.html */
+/* the font size of the first letter of the text logo (the big "T") will be the font-size of the element with class .competition-logo-container, all other sizes will scale accordingly */
+.competition-logo-container {
+	display: grid;
+	grid-template-areas:
+		"first-letter title-after-first-letter image-logo"
+		"first-letter subtitle image-logo";
+	grid-template-rows: 0.6em;
+	width: fit-content;
+	
+	text-wrap: nowrap;
+	font-family: Montserrat, sans-serif;
+}
+/* default margins for a h1.competition-logo-container are ridiculously large because of the large font-size */
+h1.competition-logo-container {
+	margin: 0.15em 0;
+	/* all sizes (in units of em) of all children of .competition-logo-container will be based off of (but not directly relative to) this font size */
+	font-size: var(--base-width);
+}
+.competition-logo-container > .text-logo-first-letter {
+	grid-area: first-letter;
+	width: fit-content;
+
+	line-height: 1.07;
+
+	font-size: 1em;
+	font-family: Gelasio, serif;
+}
+.competition-logo-container > .text-logo-title-after-first-letter {
+	grid-area: title-after-first-letter;
+	width: fit-content;
+
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 0.5em;
+}
+.competition-logo-container > .text-logo-subtitle {
+	grid-area: subtitle;
+	width: fit-content;
+
+	border-top: calc(var(--border-thickness) * 0.67) solid black;
+	/* remember that em is only relative to the font size of the parent element when used for font-size, which means that for padding em is relative to the font size of this element */
+	padding-top: 0.3em;
+
+	text-transform: capitalize;
+	font-weight: 400;
+	font-size: 0.165em;
+}
+.competition-logo-container > .image-logo {
+	grid-area: image-logo;
+	align-self: center;
+	width: 1em;
+	padding-left: 0.1em;
+}
