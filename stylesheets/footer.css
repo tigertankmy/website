@@ -6,14 +6,10 @@ footer {
 	background-color: var(--grey);
 	color: var(--black);
 
-	gap: calc(var(--base-horizontal-padding) / 4) calc(var(--base-horizontal-padding) / 2);
+	gap: calc(var(--base-horizontal-padding) / 4) calc(var(--base-horizontal-padding) / 3);
 
 	/* 1rem, since --base-font-size is 1.2rem */
 	font-size: calc(var(--base-font-size) * 0.83);
-
-	/* @media (width < 1110px) {
-		display: block;
-	} */
 }
 
 .footer-heading {
@@ -37,7 +33,7 @@ footer {
 	grid-area: first-letter;
 
 	line-height: 1;
-	font-family: Gelasio;
+	font-family: Gelasio, serif;
 	font-size: 2.6em;
 	font-weight: 700;
 }
@@ -86,6 +82,13 @@ address dd ul {
 #social-media-list {
 	display: flex;
 	justify-content: space-between;
+}
+#social-media-list a {
+	background-image: none;
+}
+#social-media-list a:hover {
+	filter: none;
+	transform: scale(1.2);
 }
 [data-icon="instagram"] {
 	content: url("../assets/icons/brands/Instagram_Glyph_Black.svg");

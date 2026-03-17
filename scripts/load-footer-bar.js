@@ -17,7 +17,7 @@ footer.innerHTML = `
 			<dd>
 				<ul>
 					<li><a href="mailto:tigertankmalaysia@gmail.com">tigertankmalaysia@gmail.com</a></li>
-					<li><a href="tel:+60166658769">+60 16-665 8769</a> (Marcus Ong, founder and managing director)</li>
+					<li><a href="tel:+60166658769">+60 16-665 8769</a> (Marcus Ong, Founder and Managing Director)</li>
 				</ul>
 			</dd>
 		</dl>

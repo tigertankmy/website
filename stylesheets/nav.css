@@ -5,6 +5,10 @@ nav {
 	border-bottom: var(--border-thickness) solid var(--yellow);
 	font-size: calc(var(--base-font-size) * 0.83);
 }
+nav > ul {
+	display: flex;
+	list-style-type: none;
+}
 nav, nav * {
 	z-index: 2;
 }
@@ -18,11 +22,9 @@ nav ul li a::after {
 		display: none;
 	}
 	nav > ul {
-		display: flex;
 		justify-content: space-between;
 		margin: 0;
 		padding: calc(var(--base-horizontal-padding) / 6) var(--base-horizontal-padding);
-		list-style-type: none;
 	}
 	nav > ul > li > a {
 		--padding: calc(var(--base-width) * 0.0625);
@@ -42,9 +44,14 @@ nav ul li a::after {
 	nav > ul > li > a:hover {
 		background-color: var(--grey);
 		background-position: calc(100% - var(--padding)) calc(50% + 0.6em);
-
+		
 		/* reset default a:hover styling */
 		filter: none;
+	}
+	nav > ul > li.current-page > a {
+		/* background-color: var(--grey); */
+		background-image: none;
+		font-weight: 600;
 	}
 }
 /* mobile */
@@ -54,7 +61,7 @@ nav ul li a::after {
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
-		padding: calc(var(--base-horizontal-padding) / 2) var(--base-horizontal-padding);
+		padding: calc(var(--base-horizontal-padding) / 3) var(--base-horizontal-padding);
 		border: none;
 
 		background-color: var(--white);

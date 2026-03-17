@@ -22,8 +22,9 @@ h1.competition-logo-container {
 
 	line-height: 1.07;
 
-	font-size: 1em;
 	font-family: Gelasio, serif;
+	font-size: 1em;
+	font-weight: 700;
 }
 .competition-logo-container > .text-logo-title-after-first-letter {
 	grid-area: title-after-first-letter;
