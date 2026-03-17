@@ -1,7 +1,6 @@
+import createOrganisationLogoInDOM from "./create-organisation-logo-in-DOM.js";
+
 const NAVIGATION_LINKS = {
-	"/": [
-		"Home",
-	],
 	"/competition": [
 		"Competition",
 	],
@@ -16,25 +15,14 @@ const NAVIGATION_LINKS = {
 	],
 };
 
-// this button is only visible on mobile (done in the stylesheet)
-const buttonDropdownNavbarToggle = document.createElement("button");
-buttonDropdownNavbarToggle.id = "button-dropdown-navbar-toggle";
-
-const buttonText = document.createElement("span");
-// destructure first element of array
-[buttonText.textContent] = NAVIGATION_LINKS[window.location.pathname];
-const currentPageIcon = document.createElement("span");
-currentPageIcon.classList.add(`${window.location.pathname.slice(1) || "home"}-icon`);
-currentPageIcon.classList.add("nav-link-icon");
-const container = document.createElement("div");
-
-container.appendChild(currentPageIcon);
-container.appendChild(buttonText);
-
-buttonDropdownNavbarToggle.appendChild(container);
-
 // this <ul> contains all the navigation links
 const ul = document.createElement("ul");
+
+const homePageLink = document.createElement("a");
+homePageLink.href = "/";
+
+const organisationLogoContainer = createOrganisationLogoInDOM();
+homePageLink.appendChild(organisationLogoContainer);
 
 for (const [path, [name]] of Object.entries(NAVIGATION_LINKS)) {
 	const li = document.createElement("li");
@@ -57,6 +45,10 @@ for (const [path, [name]] of Object.entries(NAVIGATION_LINKS)) {
 	ul.appendChild(li);
 }
 
+// this button is only visible on mobile (done in the stylesheet)
+const buttonDropdownNavbarToggle = document.createElement("button");
+buttonDropdownNavbarToggle.id = "button-dropdown-navbar-toggle";
+
 // data attributes are being used here
 // https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes
 buttonDropdownNavbarToggle.dataset.dropdownVisible = "false";
@@ -73,5 +65,6 @@ buttonDropdownNavbarToggle.addEventListener("click", () => {
 });
 
 const nav = document.querySelector("nav");
+nav.appendChild(homePageLink);
 nav.appendChild(buttonDropdownNavbarToggle);
 nav.appendChild(ul);

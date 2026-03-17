@@ -1,39 +1,52 @@
 nav {
 	position: sticky;
 	top: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: calc(var(--base-horizontal-padding) / 6) var(--base-horizontal-padding);
+
 	background-color: var(--white);
 	border-bottom: var(--border-thickness) solid var(--yellow);
 	font-size: calc(var(--base-font-size) * 0.83);
 }
+
+nav, nav * {
+	z-index: 2;
+}
+
 nav > ul {
 	display: flex;
 	list-style-type: none;
 }
-nav, nav * {
-	z-index: 2;
+nav a {
+	display: flex;
+
+	color: var(--black);
 }
-nav ul li a::after {
-	display: none;
+nav a:hover {
+	/* reset default a:hover styling */
+	filter: none;
+}
+
+/* organisation logo */
+nav > a:first-child {
+	background-image: none;
 }
 
 /* desktop */
-@media (width > 825px) {
+@media (width >= 900px) {
 	#button-dropdown-navbar-toggle {
 		display: none;
 	}
-	nav > ul {
-		justify-content: space-between;
-		margin: 0;
-		padding: calc(var(--base-horizontal-padding) / 6) var(--base-horizontal-padding);
-	}
+
 	nav > ul > li > a {
 		--padding: calc(var(--base-width) * 0.0625);
 		--text-width: calc(100% - 24px - var(--padding) - var(--padding) - 0.4em);
 		padding: var(--padding);
-		display: flex;
 
-		color: var(--black);
-		background-color: var(--white);
 		background-image: linear-gradient(var(--yellow), var(--yellow));
 		/* nav icons are 24 px with a 0.4em margin-right */
 		background-position: calc(24px + var(--padding) + 0.4em) calc(50% + 0.6em);
@@ -44,63 +57,84 @@ nav ul li a::after {
 	nav > ul > li > a:hover {
 		background-color: var(--grey);
 		background-position: calc(100% - var(--padding)) calc(50% + 0.6em);
-		
-		/* reset default a:hover styling */
-		filter: none;
 	}
+
 	nav > ul > li.current-page > a {
-		/* background-color: var(--grey); */
 		background-image: none;
 		font-weight: 600;
 	}
 }
 /* mobile */
-@media (width <= 825px) {
-	#button-dropdown-navbar-toggle {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		width: 100%;
-		padding: calc(var(--base-horizontal-padding) / 3) var(--base-horizontal-padding);
-		border: none;
-
-		background-color: var(--white);
+@media (width < 900px) {
+	nav {
+		padding: var(--base-font-size) var(--base-horizontal-padding);
+		/* so that the users cannot scroll horizontally to see the hidden dropdown */
+		/* overflow: hidden; */
 	}
-	#button-dropdown-navbar-toggle div {
-		display: flex;
-		align-items: center;
+	#button-dropdown-navbar-toggle {
+		padding: calc(var(--base-font-size) / 2);
+		border: none;
+		background-color: transparent;
+
+		z-index: 3;
+		transition-duration: 0.3s;
+	}
+	#button-dropdown-navbar-toggle:hover {
+		cursor: pointer;
+		background-color: var(--grey);
 	}
 	#button-dropdown-navbar-toggle[data-dropdown-visible="false"]::after {
-		content: url("../assets/icons/keyboard_arrow_down_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg");
+		content: url("../assets/icons/navigation/black/menu_24dp_222222_FILL0_wght400_GRAD0_opsz24.svg");
 	}
 	#button-dropdown-navbar-toggle[data-dropdown-visible="true"]::after {
-		content: url("../assets/icons/keyboard_arrow_up_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg");
+		content: url("../assets/icons/navigation/black/close_24dp_222222_FILL0_wght400_GRAD0_opsz24.svg");
 	}
+
+	nav > ul {
+		position: absolute;
+		top: calc(var(--base-font-size) * 4.9);
+		left: 0;
+
+		flex-direction: column;
+		justify-content: center;
+
+		width: 100%;
+
+		padding: 0;
+		margin: 0;
+
+		border-bottom: var(--border-thickness) solid var(--yellow);
+
+		transition: visibility linear 0.3s, opacity 0.3s;
+	}
+
 	nav > ul[data-dropdown-visible="false"] {
-		display: none;
+		visibility: hidden;
+		opacity: 0%;
 	}
 	nav > ul[data-dropdown-visible="true"] {
-		display: block;
+		visibility: visible;
+		opacity: 100%;
 	}
-	nav > ul {
-		margin: 0;
-		padding: 0;
-		background-color: var(--yellow);
-		list-style-type: none;
-	}
-	nav > ul > li.current-page {
-		display: none;
-	}
+
 	nav > ul > li > a {
 		display: flex;
 		align-items: center;
-		padding: calc(var(--base-horizontal-padding) / 3) var(--base-horizontal-padding);
-		color: var(--black);
-		text-decoration: none;
-		/* remove default <a> styling */
+
+		padding: var(--base-font-size) var(--base-horizontal-padding); 
+		background-color: var(--white);
 		background-image: none;
+		transition-duration: 0.3s;
+	}
+	nav > ul > li > a:hover {
+		background-color: var(--grey);
+	}
+	nav > ul > li.current-page > a {
+		background-color: var(--grey);
+		font-weight: 600;
 	}
 }
+
 .nav-link-icon {
 	display: inline;
 	margin-right: 0.4em;

@@ -22,6 +22,7 @@ html {
 }
 
 body {
+	/* use min-height instead of height so that navbar is still sticky */
 	min-height: 100%;
 	/* to make sure the footer is still at the bottom of the page if the page does not contain enough content */
 	display: flex;
@@ -117,7 +118,7 @@ h3 ~ ol > li::before {
 	font-size: inherit;
 }
 
-@media (width <= 825px) {
+@media (width <= 900px) {
 	h2 ~ ol {
 		padding-left: 0;
 	}

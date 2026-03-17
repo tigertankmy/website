@@ -11,7 +11,7 @@ const organisationLogoContainer = createOrganisationLogoInDOM();
 
 const footerMottoContainer = e("div");
 const footerMotto = e("span");
-footerMotto.textContent = "Introducing entrepreneurship to Malaysian students";
+footerMotto.textContent = "Introducing entrepreneurship to Malaysian students.";
 footerMottoContainer.appendChild(footerMotto);
 
 const privacyPolicyLinkContainer = e("div");
