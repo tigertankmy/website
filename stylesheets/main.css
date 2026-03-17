@@ -22,7 +22,7 @@ html {
 }
 
 body {
-	height: 100%;
+	min-height: 100%;
 	/* to make sure the footer is still at the bottom of the page if the page does not contain enough content */
 	display: flex;
 	flex-direction: column;

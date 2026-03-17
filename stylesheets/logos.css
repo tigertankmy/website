@@ -50,3 +50,45 @@ h1.competition-logo-container {
 	width: 1em;
 	padding-left: 0.1em;
 }
+
+
+.organisation-logo-container {
+	display: grid;
+	grid-template-areas:
+		"first-letter title-after-first-letter image-logo"
+		"first-letter subtitle image-logo";
+	grid-template-rows: 1.2em;
+	width: fit-content;
+
+	font-size: var(--base-font-size);
+	font-family: Montserrat;
+}
+.organisation-logo-container > .text-logo-first-letter {
+	grid-area: first-letter;
+
+	line-height: 1;
+	font-family: Gelasio, serif;
+	font-size: 2.8em;
+	font-weight: 700;
+}
+.organisation-logo-container > .text-logo-first-line {
+	grid-area: title-after-first-letter;
+
+	text-transform: uppercase;
+	font-size: 1.2em;
+	font-weight: 900;
+}
+.organisation-logo-container > .text-logo-second-line {
+	grid-area: subtitle;
+	
+	font-size: 1em;
+	letter-spacing: 0.042em;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+.organisation-logo-container > .image-logo {
+	grid-area: image-logo;
+	align-self: center;
+	width: 4em;
+	margin-left: 0.3em;
+}
