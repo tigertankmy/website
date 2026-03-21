@@ -1,0 +1,53 @@
+main {
+	padding: var(--base-horizontal-padding);
+	gap: calc(var(--base-horizontal-padding) / 2)
+}
+@media (width < 900px) {
+	main {
+		display: flex;
+		flex-direction: column;
+	}
+}
+@media (width >= 900px) {
+	main {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+#user-input-container {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--base-font-size));
+}
+#user-input-container > div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: calc(var(--base-font-size));
+}
+
+canvas {
+	width: 100%;
+}
+
+input, textarea {
+	font-size: var(--base-font-size);
+	padding: 1rem;
+}
+#user-input-container > div#text-input-container, #user-input-container > div#font-family-url-input-container {
+	flex-direction: column;
+	align-items: flex-start;
+}
+textarea#text-input,  input#font-family-url-input {
+	width: 100%;
+	box-sizing: border-box;
+	font-family: monospace;
+}
+div#font-family-url-input-container > div {
+	font-style: italic;
+}
+div#font-family-url-input-container > div > #detected-font-family {
+	font-weight: bold;
+}

@@ -10,9 +10,9 @@ const NAVIGATION_LINKS = {
 	"/faq": [
 		"FAQ",
 	],
-	"/sponsors-and-partners": [
-		"Sponsors & Partners",
-	],
+	// "/sponsors-and-partners": [
+	// 	"Sponsors & Partners",
+	// ],
 };
 
 // this <ul> contains all the navigation links
