@@ -26,6 +26,12 @@
 <body>
 	<nav></nav>
 	<main>
+	<div id="prelude-container">
+		<h1>Social media post generator</h1>
+		<p>A paragraph (paragraphs are separated by newlines) that does not fit on one image will automatically be moved to the next. Paragraphs that begin with a hashtag (#) character will be interpreted as headings.</p>
+		<p>Fonts are loaded from <a href="https://fonts.google.com/">Google Fonts</a>.</p>
+		<button id="download-button">Download images</button>
+	</div>
 	<div id="user-input-container">
 		<div id="text-input-container">
 			<label for="text-input">Text to post:</label>
@@ -64,11 +70,12 @@
 		</div>
 
 
-		<div>
+		<!-- hide these for now because background image uploading functionality has not been implemented yet -->
+		<div style="display: none;">
 			<label for="image-width-input">Image width:</label>
 			<input type="number" id="image-width-input" min="1">
 		</div>
-		<div>
+		<div style="display: none;">
 			<label for="image-height-input">Image height:</label>
 			<input type="number" id="image-height-input" min="1">
 		</div>

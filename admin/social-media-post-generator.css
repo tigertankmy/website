@@ -1,5 +1,5 @@
 main {
-	padding: var(--base-horizontal-padding);
+	padding: calc(var(--base-horizontal-padding) / 4) var(--base-horizontal-padding);
 	gap: calc(var(--base-horizontal-padding) / 2)
 }
 @media (width < 900px) {
@@ -12,6 +12,18 @@ main {
 	main {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			"prelude-container prelude-container"
+			"user-input-container canvas-container";
+	}
+	#prelude-container {
+		grid-area: prelude-container;
+	}
+	#user-input-container {
+		grid-area: user-input-container;
+	}
+	#canvas-container {
+		grid-area: canvas-container;
 	}
 }
 
@@ -19,6 +31,21 @@ main {
 	display: flex;
 	flex-direction: column;
 	gap: calc(var(--base-font-size));
+}
+button {
+	width: fit-content;
+	padding: 1rem 2rem;
+	border: none;
+
+	background-color: var(--yellow);
+	font-family: inherit;
+	font-size: 1rem;
+
+	transition-duration: 0.3s;
+}
+button:hover {
+	cursor: pointer;
+	background-color: var(--grey);
 }
 #user-input-container > div {
 	display: flex;
