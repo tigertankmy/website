@@ -48,7 +48,7 @@ contactUs_ul.appendChild(email_li);
 const phoneNumber_li = e("li");
 const phoneNumberLink = e("a");
 phoneNumberLink.href = "tel:+60166658769";
-phoneNumberLink.textContent = "60166658769";
+phoneNumberLink.textContent = "+60 16-665 8769";
 const phoneNumberDescription = e("span");
 phoneNumberDescription.textContent = " (Marcus Ong, Founder and Managing Director)";
 phoneNumber_li.appendChild(phoneNumberLink);

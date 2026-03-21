@@ -16,6 +16,9 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="../stylesheets/footer.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="./social-media-post-generator.css">
 
+	<!-- web font loader https://github.com/typekit/webfontloader -->
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="module" defer></script>
+
 	<script src="../scripts/load-navigation-bar.js" type="module" defer></script>
 	<script src="../scripts/load-footer-bar.js" type="module" defer></script>
 	<script src="./social-media-post-generator.js" type="module" defer></script>
@@ -29,12 +32,10 @@
 			<textarea type="text" id="text-input">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
 		</div>
 
-		<div id="font-family-url-input-container">
-			<label for="font-family-url-input">URL of font family:</label>
-			<input type="url" id="font-family-url-input" min="1">
-			<div>
-				<span>Detected font family: </span><span id="detected-font-family"></span>
-			</div>
+		<div id="font-family-input-container">
+			<label for="font-family-input">Font family:</label>
+			<input type="text" id="font-family-input" min="1">
+			<span id="font-family-load-status"></span>
 		</div>
 
 		<div>
@@ -58,12 +59,12 @@
 
 
 		<div>
-			<label for="width-input">Image width:</label>
-			<input type="number" id="width-input" min="1">
+			<label for="image-width-input">Image width:</label>
+			<input type="number" id="image-width-input" min="1">
 		</div>
 		<div>
-			<label for="height-input">Image height:</label>
-			<input type="number" id="height-input" min="1">
+			<label for="image-height-input">Image height:</label>
+			<input type="number" id="image-height-input" min="1">
 		</div>
 	</div>
 	<canvas></canvas>

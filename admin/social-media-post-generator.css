@@ -36,18 +36,29 @@ input, textarea {
 	font-size: var(--base-font-size);
 	padding: 1rem;
 }
-#user-input-container > div#text-input-container, #user-input-container > div#font-family-url-input-container {
+#user-input-container > div#text-input-container, #user-input-container > div#font-family-input-container {
 	flex-direction: column;
 	align-items: flex-start;
 }
-textarea#text-input,  input#font-family-url-input {
+textarea#text-input, input#font-family-input {
 	width: 100%;
 	box-sizing: border-box;
 	font-family: monospace;
 }
-div#font-family-url-input-container > div {
-	font-style: italic;
+#font-family-load-status {
+	text-transform: uppercase;
+	font-family: monospace;
+	font-size: 1rem;
 }
-div#font-family-url-input-container > div > #detected-font-family {
-	font-weight: bold;
+#font-family-load-status::before {
+	content: "> ";
+}
+#font-family-load-status.font-active {
+	color: green;
+}
+#font-family-load-status.font-loading {
+	color: blue;
+}
+#font-family-load-status.font-inactive {
+	color: red;
 }
