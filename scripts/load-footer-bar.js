@@ -16,8 +16,8 @@ footerMottoContainer.appendChild(footerMotto);
 
 const privacyPolicyLinkContainer = e("div");
 const privacyPolicyLink = e("a");
-privacyPolicyLink.href = "/privacy-policy";
-privacyPolicyLink.textContent = "Privacy policy";
+privacyPolicyLink.href = "/rules-and-regulations-tiger-tank-student-entrepreneurship-competition.pdf";
+privacyPolicyLink.textContent = "Rules and regulations";
 privacyPolicyLinkContainer.appendChild(privacyPolicyLink);
 
 footerIntroContainer.appendChild(organisationLogoContainer);
