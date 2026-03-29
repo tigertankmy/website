@@ -1,0 +1,9 @@
+- name: Competition
+  link: /competition
+  icon-class: competition-icon
+- name: Resources
+  link: /resources
+  icon-class: resources-icon
+- name: FAQ
+  link: /faq
+  icon-class: faq-icon
