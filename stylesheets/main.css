@@ -92,55 +92,68 @@ a:hover {
 	filter: brightness(130%);
 	background-size: 0 0.1em;
 }
+a.footnote, a.reversefootnote {
+	background-image: none;
+}
 
-ol {
+blockquote {
+	border-left: 0.2em solid var(--grey);
+	padding-left: 1em;
+
+	font-style: italic;
+}
+
+ol.special-list {
 	list-style: none;
 	counter-reset: counter;
 }
-ol > li {
+ol.special-list > li {
 	counter-increment: counter;
 }
-ol > li::before {
+ol.special-list > li > p {
+	display: inline-block;
+}
+ol.special-list > li::before {
 	content: counter(counter) ") ";
 }
-ol > li:not(:first-child) {
+ol.special-list > li:not(:first-child) {
 	margin-top: 1em;
 }
 
-/* targets <li>s that contain a <h3> (because the parent <ol> would be a subsequent sibling of a <h2>) */
+/* targets <li>s that contain a <h3> (because the parent <ol.special-list> would be a subsequent sibling of a <h2>) */
 
-h2 ~ ol > li::before {
+h2 ~ ol.special-list > li::before {
 	font-weight: 400;
 	font-size: clamp(1em, 1.6em, 8vw);
 }
 /* reset values because the ~ selector selects subsequent siblings separated by elements */
-h3 ~ ol > li::before {
+h3 ~ ol.special-list > li::before {
 	font-size: inherit;
 }
 
 @media (width <= 900px) {
-	h2 ~ ol {
+	h2 ~ ol.special-list {
 		padding-left: 0;
 	}
-	h3 ~ ol {
+	h3 ~ ol.special-list {
 		padding-left: 1em;
 	}
 }
 
-h2 ~ ol > li > h3 {
+h2 ~ ol.special-list > li > h3 {
 	display: inline-block;
 }
-h2 ~ ol > li > h3:first-child {
+h2 ~ ol.special-list > li > h3:first-child {
 	margin-top: 0;
 }
-h2 ~ ol > li > h3 ~ p:first-of-type {
+h2 ~ ol.special-list > li > h3 ~ p:first-of-type {
 	margin-top: 0;
 }
 
-ol ul {
+ol.special-list ul {
 	line-height: 1.4;
 }
-ol > li > ul:not(.box-list) > li:first-child {
+ol.special-list > li > ul:not(.box-list) > li:first-child {
 	margin-top: 0.5em;
 }
 

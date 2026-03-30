@@ -3,6 +3,14 @@ layout: default
 title: Resources
 ---
 <section>
-	<h2>Coming soon...</h2>
-	<p>We are working on training videos and articles for students. We'll also host workshops for students. Stay tuned!</p>
+	<h1>Resources</h1>
+	<h2>Articles</h2>
+	<ul>
+		{% for post in site.posts %}
+			<li>
+				<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+				{{ post.excerpt }}
+			</li>
+		{% endfor %}
+	</ul>
 </section>
