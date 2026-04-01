@@ -1,6 +1,6 @@
 ---
 layout: article
-title:  "Robert Kuok"
+title:  "Dimes and Riches: The Wealthiest and Sweetest Man in Malaysia — Robert Kuok"
 date:   2026-03-30 20:00:00 +0800
 categories: article
 ---
